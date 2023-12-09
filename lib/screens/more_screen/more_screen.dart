@@ -1,4 +1,6 @@
 import 'package:cop_belgium_app/main.dart';
+import 'package:cop_belgium_app/screens/profile/profile_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MoreScreen extends StatelessWidget {
@@ -21,7 +23,14 @@ class MoreScreen extends StatelessWidget {
           children: [
             SizedBox(
               child: ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const ProfileScreen(),
+                    ),
+                  );
+                },
                 leading: const CircleAvatar(
                   backgroundImage: NetworkImage(kImageUrl),
                 ),
@@ -35,7 +44,7 @@ class MoreScreen extends StatelessWidget {
                 children: [
                   ListTile(
                     onTap: () {},
-                    title: const Text('Testimonies'),
+                    title: const Text('Testmonies Screen'),
                   ),
                   ListTile(
                     onTap: () {},
