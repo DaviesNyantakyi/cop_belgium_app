@@ -1,4 +1,7 @@
 import 'package:bootstrap_icons/bootstrap_icons.dart';
+import 'package:cop_belgium_app/screens/more_screen/more_screen.dart';
+import 'package:cop_belgium_app/screens/question_answer/question_answer_screen.dart';
+import 'package:cop_belgium_app/screens/shorts_screen/shorts_screen.dart';
 
 import 'package:cop_belgium_app/utilities/constant.dart';
 import 'package:flutter/material.dart';
@@ -14,14 +17,13 @@ class BottomNavigationScreen extends StatefulWidget {
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen>
     with WidgetsBindingObserver {
-  int selectedIndex = 0;
+  int selectedIndex = 3;
 
   final List<Widget> screens = [
     const PodcastScreen(),
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
-    const Scaffold(),
+    const ShortsScreen(),
+    const QuestioAnswerScreen(),
+    const MoreScreen(),
   ];
 
   @override
@@ -71,15 +73,15 @@ Widget _buildBottomNavBar({
       ),
       _buildBottomNavItem(
         label: 'Videos',
-        icon: BootstrapIcons.camera_video,
+        icon: BootstrapIcons.collection,
       ),
       _buildBottomNavItem(
         label: 'Q&A',
-        icon: BootstrapIcons.collection_play,
+        icon: BootstrapIcons.question_square,
       ),
       _buildBottomNavItem(
         label: 'More',
-        icon: BootstrapIcons.collection,
+        icon: BootstrapIcons.list,
       ),
     ],
   );
